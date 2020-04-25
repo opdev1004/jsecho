@@ -1,7 +1,10 @@
 /*
  * JS echo that can be used within the document.
  * This will let people to write document contents within js without inditcating certain element.
- * ex). document.getElementsById("ID").outerHTML = ""; with <div id="ID"></div>
+ *
+ * ex). document.getElementsById("ID").outerHTML = "<p>Hi!</p>"; with <div id="ID"></div> to echo("<p>Hi!</p>");
+ *
+ *
  * This can not be used dynamically. And not built for dynamic contents.
  * This is same as PHP echo. Just static contents.
  */
