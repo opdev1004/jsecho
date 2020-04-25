@@ -1,34 +1,21 @@
 /*
- * Find first class of script element and add the string
- *
+ * JS echo that can be used within the document.
+ * This will let people to write document contents within js without inditcating certain element.
+ * ex). document.getElementsById("ID").outerHTML = ""; with <div id="ID"></div>
+ * This can not be used dynamically. And not built for dynamic contents.
+ * This is same as PHP echo. Just static contents.
  */
-function echo(x) {
-  if (checkClass('echo')) {
-    document.getElementsByClassName('echo')[0].outerHTML = x + document.getElementsByClassName("echo")[0].outerHTML;
+function echo(x)
+{
+  var echo_index = document.getElementsByTagName("script").length - 1;
+  var echo_content = x;
+  // Check for null and undefined and making sure boolean is printed.
+  if(typeof comment === 'undefined') echo_content = "undefined";
+  else if(comment === null) echo_content = "null";
+  else if(typeof echo_content === 'boolean')
+  {
+    if(echo_content) echo_content = "TRUE";
+    else echo_content = "FALSE";
   }
-}
-
-
-/*
- * Always close at the end of each script element with ccho().
- *
- */
-function ccho() {
-  if (checkClass('echo')) {
-    document.getElementsByClassName('echo')[0].outerHTML = '';
-  }
-}
-
-
-/*
- * Check Class.
- *
- */
-function checkClass(x) {
-  var theClass = document.getElementsByClassName(x);
-  if (theClass.length > 0) {
-    return true;
-  } else {
-    return false;
-  }
+  document.getElementsByTagName("script")[echo_index].outerHTML = echo_content + document.getElementsByTagName("script")[echo_index].outerHTML ;
 }
