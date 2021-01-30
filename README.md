@@ -24,8 +24,6 @@ Same as other script, uses script tag from html document. Example is index.html 
       <script>
         var kimchi = "test";
         echo(1);
-        echo("<p>Ya! Feel so good!</p>");
-        echo("<p>" + kimchi + "</p>");
         echo("<p>It's working!</p>");
         echo(true);
         echo("<p>Unidentified object should be fixed here.</p>");
