@@ -3,6 +3,9 @@ Javascript way of PHP echo. jsecho only works within document.
 
 Goal was printing static contents where the function is called without writing bunch of codes within javascript.
 
+## Notice
+This repository is not going to be maintained. However you are welcome to create a pull request and improve the project.
+
 ## How to use jsecho.js:
 
 Same as other script, uses script tag from html document. Example is index.html file in this repository.
